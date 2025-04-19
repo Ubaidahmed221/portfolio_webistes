@@ -1,68 +1,103 @@
-:root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+/*=============== GOOGLE FONTS ===============*/
+@import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@500;600;700;800&display=swap');
+/*=============== VARIABLES CSS ===============*/
+:root{
+/*========== Colors ==========*/
+--hue: 271;
+--first-color: hsl(var(--hue),76%, 53%);
+--title-color: hsl(var(--hue),4%, 26%);
+--text-color: hsl(var(--hue),4%, 38%);
+--body-color: hsl(var(--hue),4%, 99%);
+--container-color: hsl(var(--hue),4%, 95%);
+--border-color: hsl(var(--hue),4%, 91%);
+--white-color: hsl(var(--hue),4%, 100%);
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+/*========== Font family ==========*/
+--body-font: "Montserrat Alternates", sans-serif;
 
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+/*========== Font sizes ==========*/
+--h1-font-size: 3.5rem;
+--h2-font-size: 3rem;
+--h3-font-size: 1.5rem;
+--large-font-size: 1.25rem;
+--normal-font-size: 1rem;
+--small-font-size: 0.875rem;
+--smaller-font-size: 0.813rem;
+
+/*========== Font weight ==========*/
+--weight-500: 500;
+--weight-600: 600;
+--weight-700: 700;
+--weight-800: 800;
+}
+/* Responsive typography */
+
+
+/*=============== BASE ===============*/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
-
-body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
-}
-
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
-}
-
+body,
+input,
+textarea,
 button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+    font-family: var(--body-font);
+    font-size: var(--normal-font-size);
+    font-weight: var(--weight-500);
+
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+body{
+    background-color: var(--body-color);
+    color: var(--text-color);
 }
+
+h1,
+h2,
+h3{
+    color: var(--title-color);
+    font-weight: var(--weight-800);
+}
+ul{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+
+button,
+input,
+textarea{
+    background-color: transparent;
+    border: none;
+    outline: none;
+}
+
+img{
+    display: block;
+    max-width: 100%;
+}
+/*=============== REUSABLE CSS CLASSES ===============*/
+
+
+/*=============== LAYOUT ===============*/
+
+
+/*=============== BREAKPOINTS ===============*/
+/* For large devices */
+@media screen and (max-width: 1400px) {}
+
+@media screen and (max-width: 1200px) {}
+
+/* For medium devices */
+@media screen and (max-width: 1024px) {}
+
+@media screen and (max-width: 768px) {}
+
+/* For small devices */
+@media screen and (max-width: 540px) {}
+
+@media screen and (max-width: 420px) {}
