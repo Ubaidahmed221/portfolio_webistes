@@ -1,8 +1,50 @@
-import React from 'react';
+import { useState,useRef } from 'react';
 import { RiBook2Line, RiMailLine, RiMap2Line, RiSendPlaneLine, RiUser3Line } from "react-icons/ri";
-import './contact.css'
+import './contact.css';
+import emailjs from '@emailjs/browser';
 
 function Contact() {
+    const form = useRef();
+    const [formData, setFormData] = useState({
+        name: '',
+        email: '',
+        subject: '',
+        message: ''
+    });
+    const [feedbackMessage, setFeedbackMessage] = useState('');
+    const [MessageColor, setMessageColor] = useState('');
+
+    const handleChange = (e) =>{
+        setFormData({...formData,[e.target.name]: e.target.value});
+    };
+
+    const sendEmail = (e) =>{
+        e.preventDefault();
+         
+        if(!formData.name || !formData.email || !formData.subject || !formData.message){
+            setMessageColor('color-red');
+            setFeedbackMessage('Write all the input feilds');
+
+            setTimeout(() => setFeedbackMessage(''),3000);
+            return;
+        }
+        emailjs
+        .sendForm('service_y65hjxv', 'template_wzco18u', form.current,'LVw-cstK6JjAKe7Wn')
+        .then(
+          () => {
+            setMessageColor('color-first');
+            setFeedbackMessage('Message sent ');
+            setTimeout(() => setFeedbackMessage(''),5000);
+
+            setFormData({name: '', email:'', subject: '', message:''});
+          },
+          (error) => {
+            console.log(error);
+           alert('OOPs! SOMETHING WENT WRONG...', error);
+          },
+        );
+    }
+
     return (
        <section className='contact section' >
         <h2 className="section-title">Contact <span>Me</span> </h2>
@@ -40,32 +82,36 @@ function Contact() {
                
             </div>
 
-            <form action="" className='contact-form grid'>
+            <form ref={form} className='contact-form grid' onSubmit={sendEmail} >
                 <div className="contact-form-group grid">
                 <div className="contact-form-div">
                     <label htmlFor="" className="contact-form-label">You Full Name <span>*</span></label>
-                    <input type="text" name='name' className='contact-form-input' />
+                    <input type="text" name='name' onChange={handleChange} value={formData.name} className='contact-form-input' />
                 </div>
 
                 <div className="contact-form-div">
                     <label htmlFor="" className="contact-form-label">You Email Address <span>*</span></label>
-                    <input type="email" name='email' className='contact-form-input' />
+                    <input type="email" name='email' onChange={handleChange} value={formData.email} className='contact-form-input' />
                 </div>
                 </div>
 
                 <div className="contact-form-div">
                     <label htmlFor="" className="contact-form-label">You Subject <span>*</span></label>
-                    <input type="text" name='subject' className='contact-form-input' />
+                    <input type="text" name='subject' onChange={handleChange} value={formData.subject} className='contact-form-input' />
                 </div>
 
                 <div className="contact-form-div">
                     <label htmlFor="" className="contact-form-label">You Message <span>*</span></label>
-                   <textarea name="message" className='contact-form-input contact-form-area' ></textarea>
+                   <textarea name="message" onChange={handleChange} value={formData.message} className='contact-form-input contact-form-area' ></textarea>
                 </div>
 
                 <div className="contact-button">
                     <button className="button">Send Message <span className='button-icon' ><RiSendPlaneLine/></span> </button>
                 </div>
+                {feedbackMessage && (
+                    <p className={`contact-message ${MessageColor}`} >{feedbackMessage}</p>
+                
+                )}
                 
             </form>
         </div>
