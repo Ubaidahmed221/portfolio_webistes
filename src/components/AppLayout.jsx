@@ -8,7 +8,7 @@ function AppLayout() {
         <>
         <Navbar />
         <Outlet />
-        <Themes />
+        {/* <Themes /> */}
         </>
     )
 }
