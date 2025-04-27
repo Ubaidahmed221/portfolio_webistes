@@ -84,7 +84,9 @@ img{
 
 
 /*=============== LAYOUT ===============*/
-
+.grid{
+    display: grid;
+}
 
 /*=============== BREAKPOINTS ===============*/
 /* For large devices */

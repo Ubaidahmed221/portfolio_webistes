@@ -2,9 +2,9 @@ import React from 'react'
 
 function Home() {
     return (
-        <div>
-            
-        </div>
+        <section className='home-container grid' >
+
+        </section>
     )
 }
 
