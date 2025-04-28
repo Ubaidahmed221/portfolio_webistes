@@ -1,6 +1,6 @@
 import React from 'react'
 import Navbar from './navbar/Navbar'
-import Themes from './themes/themes'
+import Themes from './themes/Themes'
 import { Outlet } from 'react-router'
 
 function AppLayout() {
@@ -8,7 +8,7 @@ function AppLayout() {
         <>
         <Navbar />
         <Outlet />
-        {/* <Themes /> */}
+        <Themes />
         </>
     )
 }
