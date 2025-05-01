@@ -1,6 +1,6 @@
 import React from 'react'
 import Info from "../../components/info";
-import Cv from '../../pdf/steve-cv.pdf';
+import Cv from '../../pdf/Ubaid_CV.pdf';
 import { RiDownload2Line } from "react-icons/ri";
 import Stats from '../../components/stats';
 import { skill } from '../../Data';
@@ -55,7 +55,7 @@ function About() {
                 </div>
              </div>
              <div className="skills-group">
-                <h3 className="skills-title">Web Designer</h3>
+                <h3 className="skills-title">Backend Developer</h3>
 
                 <div className="skills-items grid">
                 {skill.map((val) => {
@@ -65,6 +65,7 @@ function About() {
                     })}
                 </div>
              </div>
+             
             </div>
         </section>
 

@@ -14,9 +14,10 @@ function Home() {
                 <h1 className="home-title"><span> I'm Ubaid Ahmed </span> <br /> Web Developer</h1>
 
                 <p className="home-decription">
-                I am a Tunisian based web designer & front-end developer focused on 
-                crafting clean & user-friendly experiences, I am passionate about building 
-                excellent software that improves the lives of those around me.
+                I am  web developer focused on building powerful, data-driven digital experiences.
+                 With a strong foundation in backend development, I create reliable and scalable solutions tailored 
+                 to real-world needs. I’m also passionate about crafting smooth, user-friendly interfaces that bring 
+                 everything together.
                 </p>
 
                 <Link to={'/about'} className='button' >More About Me

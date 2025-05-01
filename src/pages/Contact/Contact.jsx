@@ -55,7 +55,7 @@ function Contact() {
                     <span className="contact-icon"><RiMap2Line /></span>
                     <div>
                         <h3 className="contact-title">Address</h3>
-                        <p className="contact-data">North Tower, Toronto, Canada</p>
+                        <p className="contact-data">Karachi, Pakistan</p>
                     </div>
                 </div>
                 <div className="contact-card">
